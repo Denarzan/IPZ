@@ -1,7 +1,7 @@
 {
-  "name": "curly-succotash",
+  "name": "client",
   "version": "1.0.0",
-  "description": "Service for testing students",
+  "description": "A Vue.js project",
   "author": "Denarzan, DonSosiska, KaLen9ula",
   "private": true,
   "scripts": {

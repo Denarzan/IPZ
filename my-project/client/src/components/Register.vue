@@ -1,18 +1,19 @@
 <template>
   <div>
     <h1>Register</h1>
-    <input 
-    type = "email" 
+    <input
+    type = "email"
     name = "email"
     v-model ="email"
-    placeholder="email" /> 
+    placeholder="email" />
     <br>
-    <input 
-    type = "password" 
+    <input
+    type = "password"
     name = "password"
     v-model="password"
-    placeholder="password" /> 
+    placeholder="password" />
     <br>
+    <div class="error" v-html="error"/>
     <button
       @click="register">
       Register
@@ -26,31 +27,32 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      error: null
     }
   },
-  watch: {//write when email changing in concole
-    email (value) {
-      console.log('email has changed', value)
-      }
-    },
-    methods:{
-      async register() {
+  methods: {
+    async register () {
+      try{
         const response = await AuthenticationService.register({
           email: this.email,
           password: this.password
         })
-        console.log(response.data)
+      } catch (error) {
+        this.error = error.response.data.error
       }
-    },
-    mounted() {
-      setTimeout(() =>  {//change email after 2 second to admin
-        this.email = 'admin@gmail.com'
-      }, 2000)
     }
+  },
+  mounted () {
+    setTimeout(() => { // change email after 100 second to admin
+      this.email = 'admin@gmail.com'
+    }, 100000)
   }
+}
 </script>
 
 <style scoped>
-
+.error {
+  color: red;
+}
 </style>

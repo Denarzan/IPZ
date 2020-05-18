@@ -1,6 +1,6 @@
-# curly-succotash
+# client
 
-> Service for testing students
+> A Vue.js project
 
 ## Build Setup
 
