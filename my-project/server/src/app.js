@@ -17,3 +17,4 @@ sequelize.sync() //connects sequelize to database and create a table of it's not
         app.listen(config.port) //app running on port 8081
         console.log(`Server started on port ${config.port}`)
     })
+//sequelize.sync({force: true}) - to clean db
