@@ -12,6 +12,7 @@
           ></v-text-field>
           <br>
            <v-text-field
+            type="password"
             label="Password"
             v-model ="password"
           ></v-text-field>
@@ -40,19 +41,16 @@ export default {
   methods: {
     async register () {
       try {
-        await AuthenticationService.register({
+        const response = await AuthenticationService.register({
           email: this.email,
           password: this.password
         })
+        this.$store.dispatch('setToken', response.data.token)
+        this.$store.dispatch('setUser', response.data.user)
       } catch (error) {
         this.error = error.response.data.error
       }
     }
-  },
-  mounted () {
-    setTimeout(() => { // change email after 100 second to admin
-      this.email = 'admin@gmail.com'
-    }, 100000)
   }
 }
 </script>

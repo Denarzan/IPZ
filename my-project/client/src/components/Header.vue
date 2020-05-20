@@ -9,13 +9,19 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items>
-      <v-btn flat dark
-        class="register"
+      <v-btn
+        v-if="!$store.state.isUserLoggedIn"
+        flat 
+        dark
+        class="login"
         @click="navigateTo({name: 'login'})">
           Login
       </v-btn>
 
-      <v-btn flat dark
+      <v-btn 
+        v-if="!$store.state.isUserLoggedIn"
+        flat 
+        dark
         class="register"
         @click="navigateTo({name: 'register'})">
           Sign Up
@@ -42,6 +48,9 @@ export default {
     color: #E9E;
   }
   .register:hover {
+    color: #E9E;
+  }
+  .login:hover {
     color: #E9E;
   }
 </style>
