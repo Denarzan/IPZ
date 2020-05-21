@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
-import Works from '@/components/Works'
+import Tests from '@/components/Tests'
 
 Vue.use(Router)
 
@@ -25,9 +25,9 @@ export default new Router({
       component: Login
     },
     {
-      path: '/works',
-      name: 'works',
-      component: Works
+      path: '/tests',
+      name: 'tests',
+      component: Tests
     }
   ]
 })

@@ -12,7 +12,7 @@ app.use(cors())//allow to be hosted on a different domain
 
 require('./routes')(app)
 
-sequelize.sync() //connects sequelize to database and create a table of it's not exist
+sequelize.sync({ force: false }) //connects sequelize to database and create a table of it's not exist
     .then(() => {
         app.listen(config.port) //app running on port 8081
         console.log(`Server started on port ${config.port}`)

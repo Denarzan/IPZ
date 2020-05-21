@@ -13,7 +13,7 @@
         flat
         dark
         class="browse"
-        @click="navigateTo({name: 'works'})">
+        @click="navigateTo({name: 'tests'})">
           Browse
       </v-btn>
     </v-toolbar-items>
