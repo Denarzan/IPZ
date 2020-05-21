@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar dense dark>
+  <v-toolbar class="header" dense dark>
     <v-toolbar-title>
       <span
         class="home"
@@ -11,7 +11,6 @@
     <v-toolbar-items>
       <v-btn
         flat
-        dark
         class="browse"
         @click="navigateTo({name: 'tests'})">
           Browse
@@ -24,7 +23,6 @@
       <v-btn
         v-if="!$store.state.isUserLoggedIn"
         flat
-        dark
         class="login"
         @click="navigateTo({name: 'login'})">
           Login
@@ -33,7 +31,6 @@
       <v-btn
         v-if="!$store.state.isUserLoggedIn"
         flat
-        dark
         class="register"
         @click="navigateTo({name: 'register'})">
           Sign Up
@@ -41,7 +38,6 @@
       <v-btn
         v-if="$store.state.isUserLoggedIn"
         flat
-        dark
         class="logout"
         @click="logout">
           Log out
@@ -85,5 +81,10 @@ export default {
   }
   .browse:hover {
     color: #E9E;
+  }
+  .header {
+    position:fixed;
+    width: 100%;
+    z-index: 1;
   }
 </style>

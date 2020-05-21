@@ -2,8 +2,8 @@
   <div class="white elevation-2">
         <v-toolbar flat dense class="cyan" dark>
           <v-toolbar-title>{{title}}</v-toolbar-title>
-        </v-toolbar>
-
+            <slot name="action" />
+          </v-toolbar>
         <div>
           <slot>
             No slot content defined
@@ -21,4 +21,7 @@ export default {
 </script>
 
 <style scoped>
+  .cyan {
+    margin-top: 3%;
+  }
 </style>
