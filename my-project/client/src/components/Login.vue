@@ -58,4 +58,23 @@ export default {
 .error {
   color: red;
 }
+.container {
+  width: 350px;
+  height: 80px;
+  margin: 200px auto;
+}
+.login__span {
+  font-size: 40px;
+  color: #2c3e50;
+}
+.bg {
+  width: 450px;
+  height: 290px;
+  box-shadow: 0 0 50px rgb(0, 0, 0);
+  margin: 160px auto;
+  background-color: rgb(255, 255, 255);
+}
+.login {
+  background-color: rgb(247, 247, 247);
+}
 </style>
