@@ -1,6 +1,6 @@
 <template>
   <div class="white elevation-2">
-        <v-toolbar flat dense class="cyan" dark>
+        <v-toolbar text dense class="cyan" dark>
           <v-toolbar-title>{{title}}</v-toolbar-title>
             <slot name="action" />
           </v-toolbar>
@@ -22,6 +22,6 @@ export default {
 
 <style scoped>
   .cyan {
-    margin-top: 3%;
+    margin-top: 5%;
   }
 </style>

@@ -5,7 +5,7 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Tests from '@/components/Tests'
 import CreateTest from '@/components/CreateTest'
-import ViewTest from '@/components/ViewTest'
+import ViewTest from '@/components/ViewTest/Index'
 
 Vue.use(Router)
 

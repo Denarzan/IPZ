@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     author: DataTypes.STRING,
     topic: DataTypes.STRING,
     numofquestions: DataTypes.INTEGER,
-    tab: DataTypes.TEXT
+    tasks: DataTypes.TEXT
   })
 
   return Test

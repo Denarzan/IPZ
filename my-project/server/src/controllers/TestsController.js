@@ -2,7 +2,7 @@
 const {Test} = require('../models') // import from models/index.js as attributes on this object
 
 module.exports = {
-  async index(req, res) { // find all the tests in db and return back just 10 
+  async index (req, res) { // find all the tests in db and return back just 10 
     try {
       const tests = await Test.findAll({
         limit: 10
@@ -11,6 +11,23 @@ module.exports = {
     } catch (err) {
       res.status(500).send({
         error: 'An error has occured trying to fetch the tests'
+      })
+    }
+  },
+  async show (req, res) { 
+    console.log(req.params.testId)
+    try {
+      const test = await Test.findOne({
+        where: {
+          id: req.params.testId
+        }
+      }) 
+      console.log(test)
+      res.send(test)
+    } catch (err) {
+      console.log("Hello")
+      res.status(500).send({
+        error: 'An error has occured trying to fetch the test'
       })
     }
   },

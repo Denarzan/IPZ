@@ -45,10 +45,10 @@
         ></v-textarea>
 
         <v-textarea
-          label="Tab"
+          label="Tasks"
           required
           :rules="[required]"
-          v-model ="test.tab"
+          v-model ="test.tasks"
         ></v-textarea>
       </panel>
 
@@ -76,7 +76,7 @@ export default {
         author: null,
         topic: null,
         numofquestions: null,
-        tab: null
+        tasks: null
       },
       error: null,
       required: (value) => !!value || 'Required.'

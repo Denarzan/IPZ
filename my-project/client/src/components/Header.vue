@@ -10,7 +10,7 @@
 
     <v-toolbar-items>
       <v-btn
-        flat
+        text
         class="browse"
         @click="navigateTo({name: 'tests'})">
           Browse
@@ -22,7 +22,7 @@
     <v-toolbar-items>
       <v-btn
         v-if="!$store.state.isUserLoggedIn"
-        flat
+        text
         class="login"
         @click="navigateTo({name: 'login'})">
           Login
@@ -30,14 +30,14 @@
 
       <v-btn
         v-if="!$store.state.isUserLoggedIn"
-        flat
+        text
         class="register"
         @click="navigateTo({name: 'register'})">
           Sign Up
       </v-btn>
       <v-btn
         v-if="$store.state.isUserLoggedIn"
-        flat
+        text
         class="logout"
         @click="logout">
           Log out

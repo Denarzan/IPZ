@@ -13,6 +13,9 @@ module.exports = (app) => {
   app.get('/tests', // tests endpoint 
     TestsController.index)
 
+  app.get('/tests/:testId', 
+    TestsController.show)
+
   app.post('/tests', 
     TestsController.post)
     
