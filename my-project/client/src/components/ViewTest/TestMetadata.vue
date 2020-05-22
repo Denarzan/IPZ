@@ -1,16 +1,42 @@
 <template>
   <panel title="Test Metadata">
+    <v-btn
+      dark
+      slot="action"
+      class="button"
+      medium
+      absolute
+      right
+      middle
+      fab
+      @click="navigateTo({
+        name: 'test-edit',
+        params: {
+          testId: test.id
+        }
+        })">
+      <v-icon>edit</v-icon>
+    </v-btn>
     <div class="test-topic">
-        {{test.topic}}
+      {{test.topic}}
     </div>
 
     <div class="test-subject">
-        {{test.subject}}
+      {{test.subject}}
     </div>
 
     <div class="test-teacher">
-        {{test.teacher}}
+      {{test.teacher}}
     </div>
+
+    <div class="test-author">
+      {{test.author}}
+    </div>
+      <v-btn
+        dark
+        class="button">
+        Pass the test
+      </v-btn>
   </panel>
 </template>
 
@@ -20,6 +46,11 @@ export default {
   props: [
     'test'
   ],
+  methods: {
+    navigateTo (route) {
+      this.$router.push(route)
+    }
+  },
   components: {
     Panel
   }
@@ -48,5 +79,8 @@ export default {
   }
   .test-topic {
     font-size: 30px;
+  }
+  .button {
+    color: #E9E
   }
 </style>

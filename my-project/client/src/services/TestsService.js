@@ -9,5 +9,8 @@ export default {
   },
   post (test) {
     return Api().post('tests', test)
+  },
+  put (test) {
+    return Api().put(`tests/${test.id}`, test)
   }
 }

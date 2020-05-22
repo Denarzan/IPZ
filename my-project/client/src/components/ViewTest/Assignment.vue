@@ -3,6 +3,7 @@
     {{test.numofquestions}}
     <br>
     <v-textarea
+      auto-grow
       label="Tasks"
       v-model ="test.tasks"
     ></v-textarea>

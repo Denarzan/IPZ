@@ -22,12 +22,10 @@ module.exports = {
           id: req.params.testId
         }
       }) 
-      console.log(test)
       res.send(test)
     } catch (err) {
-      console.log("Hello")
       res.status(500).send({
-        error: 'An error has occured trying to fetch the test'
+        error: 'An error has occured trying to show the test'
       })
     }
   },
@@ -38,6 +36,20 @@ module.exports = {
     } catch (err) {
       res.status(500).send({
         error: 'An error has occured trying to create the test'
+      })
+    }
+  },
+  async put(req, res) { 
+    try {
+      const test = await Test.update(req.body, {
+        where: {
+          id: req.params.testId
+        }
+      })
+      res.send(req.body)
+    } catch (err) {
+      res.status(500).send({
+        error: 'An error has occured trying to update the test'
       })
     }
   }

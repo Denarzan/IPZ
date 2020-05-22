@@ -5,7 +5,7 @@
           <v-btn
             slot="action"
             @click="navigateTo({name: 'tests-create'})"
-            class="cyan accent-2"
+            class="button"
             medium
             absolute
             right
@@ -34,7 +34,8 @@
               </div>
               <br>
               <v-btn
-                class="view"
+                class="button"
+                dark
                 @click="navigateTo({
                   name: 'test',
                   params: {
@@ -89,7 +90,7 @@ export default {
   .test-topic {
     font-size: 30px;
   }
-  .view:hover {
+  .button {
     color: #E9E;
   }
 </style>

@@ -5,6 +5,7 @@ import Register from '@/components/Register'
 import Login from '@/components/Login'
 import Tests from '@/components/Tests'
 import CreateTest from '@/components/CreateTest'
+import EditTest from '@/components/EditTest'
 import ViewTest from '@/components/ViewTest/Index'
 
 Vue.use(Router)
@@ -40,6 +41,11 @@ export default new Router({
       path: '/tests/:testId',
       name: 'test',
       component: ViewTest
+    },
+    {
+      path: '/tests/:testId/edit',
+      name: 'test-edit',
+      component: EditTest
     }
   ]
 })

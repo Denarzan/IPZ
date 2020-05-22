@@ -16,7 +16,9 @@ module.exports = (app) => {
   app.get('/tests/:testId', 
     TestsController.show)
 
+  app.put('/tests/:testId',
+    TestsController.put)
+
   app.post('/tests', 
     TestsController.post)
-    
 } 
