@@ -14,7 +14,6 @@
 import TestMetadata from './TestMetadata'
 import Assignment from './Assignment'
 import TestsService from '@/services/TestsService'
-import Panel from '@/components/Panel'
 
 export default {
   data () {
@@ -27,7 +26,6 @@ export default {
     this.test = (await TestsService.show(testId)).data
   },
   components: {
-    Panel,
     TestMetadata,
     Assignment
   }

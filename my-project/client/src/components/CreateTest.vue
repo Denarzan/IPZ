@@ -65,7 +65,6 @@
 </template>
 
 <script>
-import Panel from '@/components/Panel'
 import TestsService from '@/services/TestsService'
 export default {
   data () {
@@ -101,9 +100,6 @@ export default {
         console.log(err)
       }
     }
-  },
-  components: {
-    Panel
   }
 }
 </script>
