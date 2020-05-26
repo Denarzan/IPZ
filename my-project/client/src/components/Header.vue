@@ -1,19 +1,24 @@
 <template>
   <v-toolbar class="header" dense dark>
     <v-toolbar-title>
-      <span
+      <router-link
         class="home"
-        @click="navigateTo({name: 'root'})">
+        tag="span"
+        :to="{
+          name: 'main'
+        }">
         CurlySuccotash
-      </span>
+      </router-link>
     </v-toolbar-title>
 
     <v-toolbar-items>
       <v-btn
         text
         class="browse"
-        @click="navigateTo({name: 'tests'})">
-          Browse
+        :to="{
+          name: 'tests'
+        }">
+        Browse
       </v-btn>
     </v-toolbar-items>
 
@@ -24,23 +29,27 @@
         v-if="!$store.state.isUserLoggedIn"
         text
         class="login"
-        @click="navigateTo({name: 'login'})">
-          Login
+        :to="{
+          name: 'login'
+        }">
+        Login
       </v-btn>
 
       <v-btn
         v-if="!$store.state.isUserLoggedIn"
         text
         class="register"
-        @click="navigateTo({name: 'register'})">
-          Sign Up
+        :to="{
+          name: 'register'
+        }">
+        Sign Up
       </v-btn>
       <v-btn
         v-if="$store.state.isUserLoggedIn"
         text
         class="logout"
         @click="logout">
-          Log out
+        Log out
       </v-btn>
     </v-toolbar-items>
   </v-toolbar>
@@ -49,14 +58,11 @@
 <script>
 export default {
   methods: {
-    navigateTo (route) {
-      this.$router.push(route)
-    },
     logout () {
       this.$store.dispatch('setToken', null)
       this.$store.dispatch('setUser', null)
       this.$router.push({
-        name: 'root'
+        name: 'main'
       })
     }
   }

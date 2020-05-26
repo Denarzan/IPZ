@@ -2,7 +2,9 @@
     <panel title="Tests">
         <v-btn
         slot="action"
-        @click="navigateTo({name: 'tests-create'})"
+        :to="{
+          name: 'tests-create'
+        }"
         class="button"
         medium
         absolute
@@ -34,12 +36,12 @@
             <v-btn
             class="button"
             dark
-            @click="navigateTo({
+            :to="{
                 name: 'test',
                 params: {
                 testId: test.id
                 }
-            })">
+            }">
             View
             </v-btn>
         </v-flex>
@@ -54,11 +56,6 @@ export default {
   data () {
     return {
       tests: null
-    }
-  },
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
     }
   },
   watch: {

@@ -21,11 +21,6 @@ export default {
       tests: null
     }
   },
-  methods: {
-    navigateTo (route) {
-      this.$router.push(route)
-    }
-  },
   async mounted () {
     this.tests = (await TestsService.index()).data
   }

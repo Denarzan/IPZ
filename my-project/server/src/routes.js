@@ -1,6 +1,7 @@
 const AuthenticationController = require('./controllers/AuthenticationController')
 const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy')
 const TestsController = require('./controllers/TestsController')
+const SavedTestsController = require('./controllers/SavedTestsController')
 
 module.exports = (app) => {
   app.post('/register', // register endpoint
@@ -21,4 +22,7 @@ module.exports = (app) => {
 
   app.post('/tests', 
     TestsController.post)
+
+  app.get('/savedtests', 
+    SavedTestsController.index)
 } 

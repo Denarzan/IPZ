@@ -21,6 +21,12 @@ fs
     const model = sequelize.import(path.join(__dirname, file)) // give a full path to a file and then sequelize import it
     db[model.name] = model //db.User = model 
   })
+
+Object.keys(db).forEach(function (modelName) { // for each model that we find 
+  if ('associate' in db[modelName]) {         // check if it has an associate method
+    db[modelName].associate(db)               // and then pass it the db object
+  }
+})
   
 db.sequelize = sequelize //we have an access to the capital sequelize object
 db.Sequelize = Sequelize

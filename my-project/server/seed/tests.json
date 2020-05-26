@@ -1,0 +1,26 @@
+[
+    {
+        "subject": "MOPE",
+        "teacher": "Selivanov",
+        "author": "Selik",
+        "topic": "Defury",
+        "numofquestions": 5,
+        "tasks": ""
+    },
+    {
+        "subject": "IPZ",
+        "teacher": "Boldak",
+        "author": "I am",
+        "topic": "Exam",
+        "numofquestions": 3,
+        "tasks": "const myQuestions = \n  {\n    question: Who invented JavaScript?,\n    answers: {\n      a: Douglas Crockford,\n      b: Sheryl Sandberg,\n      c: Brendan Eich\n    },\n    correctAnswer: c\n  },\n  {\n    question: Which one of these is a JavaScript package manager?,\n    answers: {\n      a: Node.js,\n      b: TypeScript,\n      c: npm\n    },\n    correctAnswer: c\n  },\n  {\n    question: Which tool can you use to ensure code quality?,\n    answers: {\n      a: Angular,\n      b: jQuer,\n      c: RequireJS,\n      d: ESLint\n    },\n    correctAnswer: d\n  }\n];"
+    },
+    {
+        "subject": "213",
+        "teacher": "213",
+        "author": "123",
+        "topic": "123",
+        "numofquestions": 321,
+        "tasks": "123"
+    }
+]

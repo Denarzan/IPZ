@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   port: process.env.PORT || 8081, // port
   db: { // database
@@ -7,7 +9,7 @@ module.exports = {
     options: {
       dialect: process.env.DIALECT || 'sqlite', // what type of db connecting to
       host : process.env.HOST || 'localhost', // location of the db you want to connect
-      storage: './curlysuccotash.sqlite' //where to store sqlite file
+      storage: path.resolve(__dirname, '../../curlysuccotash.sqlite') //where to store sqlite file
     }
   },
   authentication: { // authentication key

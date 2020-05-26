@@ -11,6 +11,7 @@
     "bcrypt-nodejs": "0.0.3",
     "core-js": "^3.6.4",
     "joi": "^14.3.1",
+    "lodash": "^4.17.15",
     "vue": "^2.6.11",
     "vuex": "^3.4.0",
     "vuex-router-sync": "^5.0.0"
