@@ -1,56 +1,48 @@
 <template>
   <v-layout column>
     <v-flex xs6 offset-xs3>
-      <panel title="Login">
-          <v-text-field
-            label="Email"
-            v-model ="email"
-          ></v-text-field>
-          <br>
-           <v-text-field
-            type="password"
-            label="Password"
-            v-model ="password"
-          ></v-text-field>
-          <br>
-          <div class="error" v-html="error"/>
-          <v-btn
-            class="cyan"
-            @click="login">
-            Login
-          </v-btn>
-      </panel>
+      <div class="bg">
+        <div class="container">
+          <span class="login__span">Log in</span>
+          <v-text-field label="Email" v-model="email"></v-text-field>
+          <br />
+          <v-text-field type="password" label="Password" v-model="password"></v-text-field>
+          <br />
+          <div class="error" v-html="error" />
+          <v-btn class="cyan" @click="login">Login</v-btn>
+        </div>
+      </div>
     </v-flex>
   </v-layout>
 </template>
 <script>
-import AuthenticationService from '@/services/AuthenticationService'
+import AuthenticationService from "@/services/AuthenticationService";
 export default {
-  data () {
+  data() {
     return {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       error: null
-    }
+    };
   },
   methods: {
-    async login () {
+    async login() {
       try {
         const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
-        })
-        this.$store.dispatch('setToken', response.data.token)
-        this.$store.dispatch('setUser', response.data.user)
+        });
+        this.$store.dispatch("setToken", response.data.token);
+        this.$store.dispatch("setUser", response.data.user);
         this.$router.push({
-          name: 'main'
-        })
+          name: "main"
+        });
       } catch (error) {
-        this.error = error.response.data.error
+        this.error = error.response.data.error;
       }
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -62,10 +54,6 @@ export default {
   height: 80px;
   margin: 200px auto;
 }
-.login__span {
-  font-size: 40px;
-  color: #2c3e50;
-}
 .bg {
   width: 450px;
   height: 290px;
@@ -73,7 +61,8 @@ export default {
   margin: 160px auto;
   background-color: rgb(255, 255, 255);
 }
-.login {
-  background-color: rgb(247, 247, 247);
+.login__span {
+  font-size: 40px;
+  color: #2c3e50;
 }
 </style>
