@@ -9,7 +9,7 @@
           <span class="intro">A diverse service to test yourself, or your students</span>
           <span
             class="description"
-          >CurlySuccotash is online web service, not only for students, but also for teachers, who want to test their learners. We offer you ability to create tests and pass them. It is absolutely free, with no need of payments.</span>
+          >CurlySuccotash is online web service, not only for students, but also for teachers, who want to test their learners. We offer you ability to create tests and pass them. <strong>It is absolutely free, with no need of payments.</strong></span>
         </div>
       </div>
     </v-flex>
