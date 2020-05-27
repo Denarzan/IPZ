@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar class="header" dense dark>
+  <v-toolbar class="header" dense>
     <v-toolbar-title>
       <router-link
         class="home"

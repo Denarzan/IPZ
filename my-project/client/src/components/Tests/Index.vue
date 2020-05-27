@@ -1,7 +1,9 @@
 <template>
-  <v-layout column>
-    <v-flex xs6 offset-xs3>
+  <v-layout>
+    <v-flex xs6>
       <tests-search-panel />
+    </v-flex>
+    <v-flex xs6>
       <tests-panel />
     </v-flex>
   </v-layout>

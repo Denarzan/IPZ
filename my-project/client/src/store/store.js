@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({ // adding stuff to the headers or changing what's displayed on it
   strict: false, // never modify the state unless it's through an action or mutation
+  plugins: [
+    createPersistedState()
+  ],
   state: {
     token: null,
     user: null,

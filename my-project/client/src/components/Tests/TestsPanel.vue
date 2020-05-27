@@ -35,7 +35,6 @@
             <br>
             <v-btn
             class="button"
-            dark
             :to="{
                 name: 'test',
                 params: {

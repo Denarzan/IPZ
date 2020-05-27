@@ -57,7 +57,6 @@
         {{error}}
       </div>
       <v-btn
-        dark
         class="save"
         @click="save">
           Save

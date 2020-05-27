@@ -1,7 +1,8 @@
 <template>
-  <panel title="Test Metadata">
+  <panel
+    title="Test Metadata"
+    v-if="test">
     <v-btn
-      dark
       slot="action"
       class="button"
       medium
@@ -34,33 +35,36 @@
     <div class="test-author">
       {{test.author}}
     </div>
+    <div>
+      {{isUserLoggedIn}}
+      <br/>
+      {{bookmark}}
+    </div>
       <v-btn
-        v-if="isUserLoggedIn && !isSaved"
-        dark
+        v-if="isUserLoggedIn && !bookmark"
         class="button"
-        @click="savetest">
-        Save the test
+        @click="setAsBookmark">
+        Set as Bookmark
       </v-btn>
         <v-btn
-        v-if="isUserLoggedIn && isSaved"
-        dark
+        v-if="isUserLoggedIn && bookmark"
         class="button"
-        @click="deletetest">
-        Delete the test
+        @click="unsetAsBookmark">
+        Unset as Bookmark
       </v-btn>
   </panel>
 </template>
 
 <script>
 import {mapState} from 'vuex'
-import SaveTestsService from '@/services/SaveTestsService'
+import BookmarksService from '@/services/BookmarksService'
 export default {
   props: [
     'test'
   ],
   data () {
     return {
-      isSaved: false
+      bookmark: null
     }
   },
   computed: {
@@ -68,21 +72,40 @@ export default {
       'isUserLoggedIn'
     ])
   },
-  async mounted () {
-    console.log('id', this.test.id)
-    const savedtest = (await SaveTestsService.index({
-      testId: this.test.id,
-      userId: this.$store.state.user.id
-    })).data
-    this.isSaved = !!savedtest
-    console.log('savedtest', this.isSaved)
+  watch: {
+    async song () {
+      if (!this.usUserLoggedIn) {
+        return
+      }
+
+      try {
+        this.bookmark = (await BookmarksService.index({
+          testId: this.test.id,
+          userId: this.$store.state.user.id
+        })).data
+      } catch (err) {
+        console.log(err)
+      }
+    }
   },
   methods: {
-    savetest () {
-      console.log('savetest')
+    async setAsBookmark () {
+      try {
+        this.bookmark = (await BookmarksService.post({
+          testId: this.test.id,
+          userId: this.$store.state.user.id
+        })).data
+      } catch (err) {
+        console.log(err)
+      }
     },
-    deletetest () {
-      console.log('deletetest')
+    async unsetAsBookmark () {
+      try {
+        await BookmarksService.delete(this.bookmark.id)
+        this.bookmark = null
+      } catch (err) {
+        console.log(err)
+      }
     }
   }
 }

@@ -3,13 +3,13 @@ const {
   sequelize,
   Test,
   User,
-  SavedTest
+  Bookmark
 } = require('../src/models') //models folder which has an index.js file which returns an object that has a sequelize attribute
 
 const Promise = require('bluebird')
 const tests = require('./tests.json')
 const users = require('./users.json')
-const savedtests = require('./savedtests.json')
+const bookmarks = require('./bookmarks.json')
 
 sequelize.sync({ force: true }) //connects sequelize to database and create a table of it's not exist
   .then(async function () {
@@ -24,8 +24,8 @@ sequelize.sync({ force: true }) //connects sequelize to database and create a ta
       })
     )
     await Promise.all(
-      savedtests.map(savedtest => {
-        SavedTest.create(savedtest)
+      bookmarks.map(bookmark => {
+      Bookmark.create(bookmark)
       })
     )
   }
